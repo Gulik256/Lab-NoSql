@@ -23,7 +23,7 @@ public class MonitorDaoImpl implements MonitorDao {
 
     @Override
     public void getAllMonitors() {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Monitor");
 
@@ -41,7 +41,7 @@ public class MonitorDaoImpl implements MonitorDao {
 
     @Override
     public void getByName(String Name) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Monitor");
 
@@ -55,8 +55,8 @@ public class MonitorDaoImpl implements MonitorDao {
     }
 
     @Override
-    public void createMonitor(Monitor monitor) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017")) {
+    public boolean createMonitor(Monitor monitor) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Monitor");
 
@@ -82,15 +82,17 @@ public class MonitorDaoImpl implements MonitorDao {
 
             Collection.insertOne(Monitor_createMonitor);
             System.out.println("------------------One monitor inserted-------------------");
+            return true;
         }
         catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 
     @Override
     public void updateMonitor(Monitor monitor) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Monitor");
 
@@ -129,7 +131,7 @@ public class MonitorDaoImpl implements MonitorDao {
 
     @Override
     public void deleteMonitor(Monitor monitor) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Monitor");
 
@@ -140,6 +142,20 @@ public class MonitorDaoImpl implements MonitorDao {
         }
         catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteAllMonitors() {
+        try(MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+            MongoDatabase DB = mongoClient.getDatabase("Monitors");
+            MongoCollection<Document> Collection = DB.getCollection("Monitor");
+
+            List<Document> monitorList = Collection.find().into(new ArrayList<>());
+            for (Document monitor : monitorList) {
+                Collection.deleteOne(monitor);
+            }
+            System.out.println("------------------Monitors delete-------------------");
         }
     }
 }
