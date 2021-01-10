@@ -1,22 +1,5 @@
-import Dao.ModelDao;
 import Dao.MonitorDao;
-import Dao.TypeDao;
-import Impl.ModelDaoImpl;
 import Impl.MonitorDaoImpl;
-import Impl.TypeDaoImpl;
-import Models.Model;
-import Models.Monitor;
-import Models.Type;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import org.bson.Document;
-import org.bson.json.JsonWriterSettings;
-import org.bson.types.ObjectId;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.util.Arrays.asList;
 
 public class Main {
     public static void main(String[] args) {
@@ -99,5 +82,19 @@ public class Main {
 //        Monitor monitor2 = new Monitor(id2);
 //        MonitorDao monitorDao2 = new MonitorDaoImpl();
 //        monitorDao2.deleteMonitor(monitor2);
+
+
+        //MigrationFromMySqlToMongoDB
+//        new Migration.migrationFromMySqlToMongo().MigrationTypeFromMySqlToMongo();
+//        new Migration.migrationFromMySqlToMongo().MigrationModelFromMySqlToMongo();
+//        new Migration.migrationFromMySqlToMongo().MigrationMonitorFromMySqlToMongo();
+
+        //MigrationFromMongoDbToMySql
+//        new Migration.migrationFromMongoToSql().MigrationTypeFromMongoToMySql();
+//        new Migration.migrationFromMongoToSql().MigrationModelFromMongoToMySql();
+//        new Migration.migrationFromMongoToSql().MigrationMonitorFromMongoToMySql();
+
+
+
     }
 }
