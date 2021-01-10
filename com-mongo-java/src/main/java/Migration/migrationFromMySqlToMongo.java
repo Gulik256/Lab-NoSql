@@ -35,7 +35,7 @@ public class migrationFromMySqlToMongo {
                 }
                 rs.close();
 
-                MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
+                MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
                 MongoDatabase DB = mongoClient.getDatabase("Monitors");
                 MongoCollection<Document> Collection = DB.getCollection("Type");
 
@@ -71,7 +71,7 @@ public class migrationFromMySqlToMongo {
                 }
                 rs.close();
 
-                MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
+                MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
                 MongoDatabase DB = mongoClient.getDatabase("Monitors");
                 MongoCollection<Document> Collection = DB.getCollection("Model");
 
@@ -137,7 +137,7 @@ public class migrationFromMySqlToMongo {
                 }
                 rs.close();
 
-                MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
+                MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
                 MongoDatabase DB = mongoClient.getDatabase("Monitors");
                 MongoCollection<Document> Collection = DB.getCollection("Monitor");
 

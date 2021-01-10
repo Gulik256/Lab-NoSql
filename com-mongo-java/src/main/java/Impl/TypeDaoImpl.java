@@ -23,7 +23,7 @@ public class TypeDaoImpl implements TypeDao {
 
     @Override
     public void getAllTypes() {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Type");
 
@@ -41,7 +41,7 @@ public class TypeDaoImpl implements TypeDao {
 
     @Override
     public void getByNameType(String Type) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Type");
 
@@ -56,7 +56,7 @@ public class TypeDaoImpl implements TypeDao {
 
     @Override
     public void createType(Type type) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Type");
 
@@ -74,7 +74,7 @@ public class TypeDaoImpl implements TypeDao {
 
     @Override
     public void updateType(Type type) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Type");
 
@@ -97,7 +97,7 @@ public class TypeDaoImpl implements TypeDao {
 
     @Override
     public void deleteType(Type type) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Type");
 

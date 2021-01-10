@@ -16,7 +16,7 @@ public class migrationFromMongoToSql {
 
     public void MigrationTypeFromMongoToMySql(){
         try {
-            MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
+            MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Type");
             List<Document> typeList = Collection.find().into(new ArrayList<>());
@@ -40,7 +40,7 @@ public class migrationFromMongoToSql {
 
     public void MigrationModelFromMongoToMySql(){
         try {
-            MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
+            MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Model");
             List<Document> modelList = Collection.find().into(new ArrayList<>());
@@ -65,7 +65,7 @@ public class migrationFromMongoToSql {
 
     public void MigrationMonitorFromMongoToMySql(){
         try {
-            MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
+            MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true");
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Monitor");
             List<Document> monitorList = Collection.find().into(new ArrayList<>());
