@@ -25,7 +25,7 @@ public class ModelDaoImpl implements ModelDao {
 
     @Override
     public void getAllModels() {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Model");
 
@@ -43,7 +43,7 @@ public class ModelDaoImpl implements ModelDao {
 
     @Override
     public void getByModel(String Model) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Model");
 
@@ -58,7 +58,7 @@ public class ModelDaoImpl implements ModelDao {
 
     @Override
     public void createModel(Model model) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Model");
 
@@ -77,7 +77,7 @@ public class ModelDaoImpl implements ModelDao {
 
     @Override
     public void updateModel(Model model) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Model");
 
@@ -101,7 +101,7 @@ public class ModelDaoImpl implements ModelDao {
 
     @Override
     public void deleteModel(Model model) {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27011,localhost:27012,localhost:27013/?replicaSet=myapp&retryWrites=true")) {
             MongoDatabase DB = mongoClient.getDatabase("Monitors");
             MongoCollection<Document> Collection = DB.getCollection("Model");
 

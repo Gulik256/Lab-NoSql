@@ -1,5 +1,10 @@
+import Aggregation.Aggregation;
+import Dao.ModelDao;
 import Dao.MonitorDao;
+import Dao.TypeDao;
+import Impl.ModelDaoImpl;
 import Impl.MonitorDaoImpl;
+import Impl.TypeDaoImpl;
 import Models.Model;
 import Models.Monitor;
 import Models.Type;
@@ -9,20 +14,43 @@ public class Main {
 
         //insert model
 //        Model model = new Model("Test","Test", "Test");
+//        Model model2 = new Model("Test1","Test1", "Test1");
+//        Model model3 = new Model("Test2","Test2", "Test2");
+//        Model model4 = new Model("Test3","Test3", "Test3");
+//
 //        ModelDao modelDao = new ModelDaoImpl();
 //        modelDao.createModel(model);
+//        modelDao.createModel(model2);
+//        modelDao.createModel(model3);
+//        modelDao.createModel(model4);
 
         //insert type
 //        Type type = new Type("Test", "Test");
+//        Type type1 = new Type("Test2", "Test2");
+//        Type type2 = new Type("Test3", "Test3");
+//        Type type3 = new Type("Test4", "Test4");
+//
 //        TypeDao typeDao = new TypeDaoImpl();
 //        typeDao.createType(type);
+//        typeDao.createType(type1);
+//        typeDao.createType(type2);
+//        typeDao.createType(type3);
+
 
         //insert monitor
-//        Model model = new Model("Test","Test", "Test");
-//        Type type = new Type("Test", "Test");
-//        Monitor monitor = new Monitor("Test", "Test", "Test", 21, 1080, 60, type, model);
+//        Model model11 = new Model("Test1","Test1", "Test1");
+//        Type type11 = new Type("Test1", "Test1");
+//        Model model12 = new Model("Test2","Test2", "Test2");
+//        Type type12 = new Type("Test2", "Test2");
+//        Model model13 = new Model("Test3","Test3", "Test3");
+//        Type type13 = new Type("Test3", "Test3");
+//        Monitor monitor = new Monitor("Test1", "Test1", "Test1", 21, 720, 75, type11, model11);
+//        Monitor monitor1 = new Monitor("Test2", "Test2", "Test2", 24, 1080, 80, type12, model12);
+//        Monitor monitor2 = new Monitor("Test3", "Test3", "Test3", 26, 1080, 120, type13, model13);
 //        MonitorDao monitorDao = new MonitorDaoImpl();
 //        monitorDao.createMonitor(monitor);
+//        monitorDao.createMonitor(monitor1);
+//        monitorDao.createMonitor(monitor2);
 
         //find by name model
 //        ModelDao modelDao = new ModelDaoImpl();
@@ -101,8 +129,8 @@ public class Main {
     //    Replication
 //        new Replication.Replication().replication();
 
+        //Aggregation
+//        new Aggregation().testTimeAggregation();
         
-
-
     }
 }
