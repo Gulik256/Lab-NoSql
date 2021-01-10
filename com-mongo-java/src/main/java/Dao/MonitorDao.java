@@ -9,8 +9,9 @@ public interface MonitorDao {
 
     void getAllMonitors();
     void getByName(String Name);
-    void createMonitor(Monitor monitor);
+    boolean createMonitor(Monitor monitor);
     void updateMonitor(Monitor monitor);
     void deleteMonitor(Monitor monitor);
+    void deleteAllMonitors();
 
 }

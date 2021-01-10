@@ -1,8 +1,11 @@
 import Dao.MonitorDao;
 import Impl.MonitorDaoImpl;
+import Models.Model;
+import Models.Monitor;
+import Models.Type;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //insert model
 //        Model model = new Model("Test","Test", "Test");
@@ -82,6 +85,7 @@ public class Main {
 //        Monitor monitor2 = new Monitor(id2);
 //        MonitorDao monitorDao2 = new MonitorDaoImpl();
 //        monitorDao2.deleteMonitor(monitor2);
+//        monitorDao2.deleteAllMonitors();
 
 
         //MigrationFromMySqlToMongoDB
@@ -94,6 +98,10 @@ public class Main {
 //        new Migration.migrationFromMongoToSql().MigrationModelFromMongoToMySql();
 //        new Migration.migrationFromMongoToSql().MigrationMonitorFromMongoToMySql();
 
+    //    Replication
+//        new Replication.Replication().replication();
+
+        
 
 
     }
